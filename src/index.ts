@@ -1,8 +1,5 @@
 import { WebSocketServer, WebSocket, RawData } from "ws";
 
-/**
- * Message type.
- */
 type Message =
   | { type: "subscribe"; topics: string[] }
   | { type: "unsubscribe"; topics: string[] }
@@ -10,9 +7,6 @@ type Message =
   | { type: "ping" }
   | { type: "pong" };
 
-/**
- * Send message.
- */
 function send(socket: WebSocket, message: Message) {
   try {
     socket.send(JSON.stringify(message));
@@ -21,9 +15,6 @@ function send(socket: WebSocket, message: Message) {
   }
 }
 
-/**
- * Parse message.
- */
 function parse(rawData: RawData) {
   try {
     return JSON.parse(String(rawData)) as Message;
