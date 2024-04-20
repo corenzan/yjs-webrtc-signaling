@@ -2,4 +2,4 @@ services:
   app:
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.yjs-webrtc-signling.rule=Host(`yjs-webrtc-signling.local.crz.li`)"
+      - "traefik.http.routers.yjs-webrtc-signaling.rule=Host(`yjs-webrtc-signaling.local.crz.li`)"
